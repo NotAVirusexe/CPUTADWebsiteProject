@@ -8,13 +8,13 @@ $db = mysqli_connect('localhost','root','','testdatabase');
 
 //if the sign up button is clicked
     if(isset($_POST["submit"])){
+        $email = mysqli_real_escape_string($db, $_POST['email']);
         $name = mysqli_real_escape_string($db, $_POST['name']);
         $surname = mysqli_real_escape_string($db, $_POST['surname']);
-        $email = mysqli_real_escape_string($db, $_POST['email']);
         $password = mysqli_real_escape_string($db, $_POST['password']);
 
-        $sql = "INSERT INTO users(firstName,lastName,Email,Password)
-        VALUES('$name','$surname','$email','$password')";
+        $sql = "INSERT INTO users(Email,firstName,lastName,,Password)
+        VALUES('$email','$name','$surname','$password')";
         mysqli_query($db,$sql);
 
         header('Location: sign-inpage.html');
