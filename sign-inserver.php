@@ -15,6 +15,10 @@ $db = mysqli_connect('localhost','root','','testdatabase');
 
         $sql = "INSERT INTO users(Email,firstName,lastName,,Password)
         VALUES('$email','$name','$surname','$password')";
+        echo $name . $surname . $email . $password;
+        $sql = "INSERT INTO users(firstName,lastName,Email,Password)
+        VALUES('$name','$surname','$email','$password')";
+
         mysqli_query($db,$sql);
 
         header('Location: sign-inpage.html');
