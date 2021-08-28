@@ -13,6 +13,7 @@ $db = mysqli_connect('localhost','root','','testdatabase');
         $email = mysqli_real_escape_string($db, $_POST['email']);
         $password = mysqli_real_escape_string($db, $_POST['password']);
 
+        echo $name . $surname . $email . $password;
         $sql = "INSERT INTO users(firstName,lastName,Email,Password)
         VALUES('$name','$surname','$email','$password')";
         mysqli_query($db,$sql);
